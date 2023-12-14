@@ -20,21 +20,23 @@ const getTopics = async () => {
 
 const TopicsList = async () => {
   const { topics } = await getTopics();
-
+  
   return (
     <>
-      {topics.map((t) => (
-        <div key={t._id} className="flex w-full justify-between border border-slate-300 p-4 my-2">
-          <div>
+      {topics.sort((a, b) => a.title.localeCompare(b.title)).map((t) => (
+        <div key={t._id} className="flex flex-col w-full justify-between border border-slate-300 p-4 my-2">
+          <div className="flex justify-between pb-3">
             <h2 className={`${inter.className} text-2xl font-bold`}>
               {t.title}
             </h2>
-            <div>{t.description}</div>
+            <div className="flex gap-2">
+              <RemoveBtn id={t._id}/>
+              <EditBtn id={t._id}/>
+            </div>
           </div>
-          <div className="flex gap-2">
-            <RemoveBtn id={t._id}/>
-            <EditBtn id={t._id}/>
-          </div>
+          <div>{t.description}</div>
+          <div className="flex flex-end pt-3 justify-end text-blue-400">{t.updatedAt.slice(0,16)}</div>
+          
         </div>
       ))}
     </>

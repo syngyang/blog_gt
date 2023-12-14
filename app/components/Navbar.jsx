@@ -10,13 +10,15 @@ const Navbar = () => {
         <Link href={'/'} className={`${inter.className} text-2xl font-extrabold`}>daisyUI</Link>
       </div>
       <div className="flex-none gap-2">
-        <Link href={'/addTopic'} className="text-green-600"><CgAdd size={48} /></Link>
+        <Link href={'/addTopic'} className="text-green-600">
+          <CgAdd size={48} />
+        </Link>
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
             role="button"
             className="btn btn-ghost btn-circle avatar"
-          >
+            >
             <div className="w-10 rounded-full">
               <img
                 alt="Tailwind CSS Navbar component"
