@@ -52,7 +52,7 @@ const AddTopicPage = () => {
           onChange={(e) => setDescription(e.target.value)}
           value={description}
           type="text"
-          className="textarea textarea-bordered border-green-500 text-lg"
+          className="textarea textarea-bordered h-48 border-green-500 text-lg"
           placeholder="내용"
         ></textarea>
 

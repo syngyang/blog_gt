@@ -47,7 +47,7 @@ const EditTopicForm = ({ id, title, description }) => {
         <textarea
           onChange={(e) => setNewDescription(e.target.value)}
           value={newDescription}
-          className="textarea textarea-bordered border-violet-500"
+          className="textarea textarea-bordered h-48 border-violet-500"
           placeholder="Description"
         ></textarea>
 
